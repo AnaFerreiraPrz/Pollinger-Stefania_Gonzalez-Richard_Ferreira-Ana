@@ -1,7 +1,7 @@
 window.addEventListener('load', function () {
     (function(){
 
-        const url = '/odontologo';
+        const url = '/odontologos';
         const settings = {
             method: 'GET'
         }
@@ -16,7 +16,7 @@ window.addEventListener('load', function () {
             .then(data => {
                 for(odontologo of data){
 
-                    let table = document.getElementById("add_new_odontologo");
+                    let table = document.getElementById("odontologoTable");
                     let odontologoRow =table.insertRow();
                     let tr_id = 'tr_' + odontologo.id;
                     odontologoRow.id = tr_id;

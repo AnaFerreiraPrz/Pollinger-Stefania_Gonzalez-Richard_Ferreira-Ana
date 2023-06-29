@@ -8,11 +8,17 @@ window.addEventListener('load', function () {
         const formData = {
             nombre: document.querySelector('#nombre').value,
             apellido: document.querySelector('#apellido').value,
-            matricula: document.querySelector('#dni').value,
+            dni: document.querySelector('#dni').value,
+            fechaIngreso: document.querySelector('#fechaIngreso').value,
+            domicilio: {
+                calle: document.querySelector('#calle').value,
+                numero: document.querySelector('#numero').value,
+                localidad: document.querySelector('#localidad').value,
+                provincia: document.querySelector('#provincia').value
+            }
+        }
 
-        };
-
-        const url = '/paciente/registrar';
+        const url = '/pacientes/registrar';
         const settings = {
             method: 'POST',
             headers: {
@@ -22,9 +28,13 @@ window.addEventListener('load', function () {
         }
 
         fetch(url, settings)
-            .then(response => response.json())
+            .then(response => {
+                if (response.ok) {
+                    return response.json();
+                }
+                throw new Error('Something went wrong');
+            })
             .then(data => {
-                //Si no hay ningun error se muestra un mensaje diciendo que el paciente se agrego bien
                 let successAlert = '<div class="alert alert-success alert-dismissible">' +
                     '<button type="button" class="close" data-dismiss="alert">&times;</button>' +
                     '<strong></strong> Paciente registrado </div>'
@@ -35,31 +45,31 @@ window.addEventListener('load', function () {
 
             })
             .catch(error => {
-                //Si hay algun error se muestra un mensaje diciendo que el paciente no se pudo guardar para que se intente nuevamente
                 let errorAlert = '<div class="alert alert-danger alert-dismissible">' +
                     '<button type="button" class="close" data-dismiss="alert">&times;</button>' +
                     '<strong> Error intente nuevamente</strong> </div>'
 
                 document.querySelector('#response').innerHTML = errorAlert;
                 document.querySelector('#response').style.display = "block";
-                //se dejan todos los campos vacíos por si se quiere ingresar otro paciente
-                resetUploadForm();})
+                resetUploadForm();
+            })
+        event.preventDefault();
     });
 
 
-    function resetUploadForm(){
+    function resetUploadForm() {
         document.querySelector('#nombre').value = "";
         document.querySelector('#apellido').value = "";
         document.querySelector('#dni').value = "";
 
     }
 
-    (function(){
+    (function () {
         let pathname = window.location.pathname;
-        if(pathname === "/"){
+        if (pathname === "/") {
             document.querySelector(".nav .nav-item a:first").addClass("active");
         } else if (pathname == "/get_paciente.html") {
             document.querySelector(".nav .nav-item a:last").addClass("active");
         }
     })();
-});
+    });
