@@ -46,9 +46,9 @@ class IOdontologoServiceTest {
     }
 
 
-@Test
-@Order(3)
-void deberiaEliminarElprimerOdontologo() throws ResourceNotFoundException {
+    @Test
+    @Order(3)
+    void deberiaEliminarElprimerOdontologo() throws ResourceNotFoundException {
         odontologoService.eliminarOdontologo(1L);
         Assertions.assertThrows(ResourceNotFoundException.class, () -> odontologoService.eliminarOdontologo(1L));
 

@@ -50,7 +50,6 @@ window.addEventListener('load', function () {
         event.preventDefault();
     });
 
-
     function resetUploadForm(){
         document.querySelector('#nombre').value = "";
         document.querySelector('#apellido').value = "";
