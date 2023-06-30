@@ -150,7 +150,7 @@ const inicializarFormulario = function () {
             .then(data => {
                 let successAlert = '<div class="alert alert-success alert-dismissible">' +
                     '<button type="button" class="close" data-dismiss="alert">&times;</button>' +
-                    '<strong></strong> Odontólogo registrado </div>'
+                    '<strong></strong> Turno ingresado con exito</div>'
 
                 document.querySelector('#response').innerHTML = successAlert;
                 document.querySelector('#response').style.display = "block";

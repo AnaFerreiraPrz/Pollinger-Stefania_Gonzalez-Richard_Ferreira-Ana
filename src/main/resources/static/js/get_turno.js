@@ -31,6 +31,7 @@ const loadTurnos = function () {
 
 
                 turnoRow.innerHTML =
+                    '<td class=\"td_id\">' + turno.id + '</td>' +
                     '<td class=\"td_paciente\">' + turno.paciente.toUpperCase() + '</td>' +
                     '<td class=\"td_odontologo\">' + turno.odontologo.toUpperCase() + '</td>' +
                     '<td class=\"td_fecha_y_hora\">' + turno.fechaYHora.toUpperCase() + '</td>' +

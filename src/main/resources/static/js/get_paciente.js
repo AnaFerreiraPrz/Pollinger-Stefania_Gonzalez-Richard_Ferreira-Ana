@@ -1,6 +1,5 @@
-window.addEventListener('load', function () {
+window.addEventListener('load', function (event) {
     (function(){
-
         const url = '/pacientes';
         const settings = {
             method: 'GET'
@@ -38,12 +37,16 @@ window.addEventListener('load', function () {
                         '<td class=\"td_apellido\">' + paciente.apellido.toUpperCase() + '</td>' +
                         '<td class=\"td_dni\">' + paciente.dni.toUpperCase() + '</td>' +
                         '<td class=\"td_fechaIngreso\">' + paciente.fechaIngreso.toUpperCase() + '</td>' +
-                        '<td class=\"td_domicilio\">' + paciente.domicilio.calle.toUpperCase() + '</td>' +
+                        '<td class=\"td_calle\">' + paciente.domicilio.calle.toUpperCase() + '</td>' +
+                        '<td class=\"td_numero\">' + paciente.domicilio.numero + '</td>' +
+                        '<td class=\"td_localidad\">' + paciente.domicilio.localidad.toUpperCase() + '</td>' +
+                        '<td class=\"td_provincia\">' + paciente.domicilio.provincia.toUpperCase() + '</td>' +
                         '<td>' + deleteButton + '</td>';
 
                 };
 
             })
+        event.preventDefault();
     })
 
     (function(){

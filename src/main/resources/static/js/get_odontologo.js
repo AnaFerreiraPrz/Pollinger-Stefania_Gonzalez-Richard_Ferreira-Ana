@@ -1,4 +1,4 @@
-window.addEventListener('load', function () {
+window.addEventListener('load', function (event) {
     (function(){
 
         const url = '/odontologos';
@@ -42,6 +42,7 @@ window.addEventListener('load', function () {
                 };
 
             })
+        event.preventDefault();
     })
 
     (function(){

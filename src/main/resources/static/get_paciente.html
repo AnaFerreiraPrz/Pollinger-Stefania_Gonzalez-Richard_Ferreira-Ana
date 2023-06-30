@@ -65,12 +65,29 @@
                 <input type="text" class="form-control" placeholder="dni" id="dni">
             </div>
             <div class="form-group">
-                <label>Fecha de Ingreso:</label>
-                <input type="text" class="form-control" placeholder="fechaIngreso" id="fechaIngreso">
+                <label class="control-label" for="calle">Calle:</label>
+                <input type="text" class="form-control" id="calle" placeholder="Ingrese la calle"
+                       required>
             </div>
             <div class="form-group">
-                <label>Domicilio:</label>
-                <input type="text" class="form-control" placeholder="domicilio" id="domicilio">
+                <label class="control-label" for="numero">Numero:</label>
+                <input type="number" class="form-control" id="numero" placeholder="Ingrese el numero"
+                       required>
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="localidad">Localidad:</label>
+                <input type="text" class="form-control" id="localidad" placeholder="Ingrese la localidad"
+                       required>
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="provincia">Provincia:</label>
+                <input type="text" class="form-control" id="provincia" placeholder="Ingrese la provincia"
+                       required>
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="fechaIngreso">Fecha de Ingreso:</label>
+                <input type="date" class="form-control" id="fechaIngreso"
+                       required>
             </div>
             <button type="submit" class="btn btn-primary">Modificar</button>
         </form>
